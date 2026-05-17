@@ -40,3 +40,19 @@ export interface IdentityEntry {
   identity: string
   date: string // YYYY-MM-DD
 }
+
+export interface Thought {
+  id?: string
+  created_at?: string
+  thought: string
+  reframe?: string
+  reframed_at?: string
+  date: string // YYYY-MM-DD
+}
+
+export interface Distraction {
+  id?: string
+  created_at?: string
+  distraction: string
+  date: string // YYYY-MM-DD
+}

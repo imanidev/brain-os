@@ -4,6 +4,9 @@ const ROUTES = [
   { path: '/', label: 'Anchor' },
   { path: '/confidence', label: 'Achievements' },
   { path: '/identity', label: 'Identity' },
+  { path: '/thoughts', label: 'Thoughts' },
+  { path: '/distractions', label: 'Distractions' },
+  { path: '/timer', label: 'Timer' },
 ]
 
 export default function Sidebar() {

@@ -1,0 +1,392 @@
+.thoughts-shell {
+  min-height: 100vh;
+  background: #0a0a0a;
+  display: flex;
+  justify-content: center;
+  padding: 40px 24px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.thoughts-container {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.thoughts-loading {
+  color: #555;
+  font-family: 'DM Mono', monospace;
+  font-size: 14px;
+}
+
+/* Header */
+.thoughts-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.thoughts-title {
+  font-size: 32px;
+  font-weight: 600;
+  color: #f0f0f0;
+  margin: 0;
+}
+
+.thoughts-sub {
+  font-size: 15px;
+  color: #666;
+  margin: 0;
+}
+
+/* Card */
+.thoughts-card {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.capture-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-family: 'DM Mono', monospace;
+}
+
+.capture-input {
+  background: #171717;
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  color: #f0f0f0;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.15s;
+  resize: none;
+}
+
+.capture-input:focus {
+  border-color: #7c6aff;
+}
+
+.capture-input::placeholder {
+  color: #444;
+}
+
+.capture-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.capture-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.char-count {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: #444;
+}
+
+.capture-btn {
+  background: #7c6aff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.capture-btn:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.capture-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.error-msg {
+  font-size: 13px;
+  color: #ff6b6b;
+  font-family: 'DM Mono', monospace;
+  margin: 0;
+}
+
+/* Section */
+.thoughts-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.section-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-family: 'DM Mono', monospace;
+  margin: 0;
+}
+
+/* Thoughts list */
+.thoughts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.thought-item {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 12px;
+  padding: 16px;
+  transition: border-color 0.15s;
+}
+
+.thought-item:hover {
+  border-color: #333;
+}
+
+.thought-item.unreframed {
+  border-left: 3px solid #ff6b6b;
+}
+
+.thought-item.reframed {
+  border-left: 3px solid #4ade80;
+}
+
+.thought-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.thought-text {
+  font-size: 15px;
+  color: #ddd;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.thought-text.struck {
+  color: #555;
+  text-decoration: line-through;
+  text-decoration-color: #333;
+}
+
+.thought-date {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: #555;
+}
+
+.thought-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.reframe-trigger {
+  background: transparent;
+  border: 1px solid #333;
+  color: #888;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.reframe-trigger:hover {
+  border-color: #7c6aff;
+  color: #7c6aff;
+}
+
+.delete-thought-btn {
+  background: transparent;
+  border: none;
+  color: #444;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 4px 8px;
+  transition: color 0.15s;
+  margin-left: auto;
+}
+
+.delete-thought-btn:hover {
+  color: #ff6b6b;
+}
+
+/* Reframe form */
+.reframe-form {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.reframe-input {
+  background: #171717;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: #f0f0f0;
+  width: 100%;
+  outline: none;
+  resize: none;
+  transition: border-color 0.15s;
+}
+
+.reframe-input:focus {
+  border-color: #7c6aff;
+}
+
+.reframe-input::placeholder {
+  color: #444;
+}
+
+.reframe-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.reframe-btn {
+  background: #7c6aff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.reframe-btn:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.reframe-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.cancel-btn {
+  background: transparent;
+  border: 1px solid #333;
+  color: #888;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.cancel-btn:hover {
+  border-color: #555;
+  color: #aaa;
+}
+
+/* Reframed thought pair */
+.thought-pair {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.original,
+.reframe {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pair-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.thought-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #1a1a1a;
+}
+
+/* Empty state */
+.thoughts-empty {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 16px;
+  padding: 48px 32px;
+  text-align: center;
+}
+
+.thoughts-empty p {
+  color: #666;
+  font-size: 15px;
+  margin: 0;
+}
+
+.thoughts-empty .empty-sub {
+  font-size: 13px;
+  color: #444;
+  margin-top: 8px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .thoughts-shell {
+    padding: 24px 16px;
+  }
+
+  .thoughts-card {
+    padding: 20px;
+  }
+
+  .thoughts-title {
+    font-size: 28px;
+  }
+
+  .thought-item {
+    padding: 14px;
+  }
+
+  .reframe-actions {
+    flex-direction: column;
+  }
+
+  .reframe-btn,
+  .cancel-btn {
+    width: 100%;
+  }
+}

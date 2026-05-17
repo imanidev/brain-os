@@ -1,0 +1,206 @@
+.timer-shell {
+  min-height: 100vh;
+  background: #0a0a0a;
+  display: flex;
+  justify-content: center;
+  padding: 40px 24px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.timer-container {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Header */
+.timer-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: center;
+}
+
+.timer-title {
+  font-size: 32px;
+  font-weight: 600;
+  color: #f0f0f0;
+  margin: 0;
+}
+
+.timer-sub {
+  font-size: 15px;
+  color: #666;
+  margin: 0;
+}
+
+/* Card */
+.timer-card {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 16px;
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+/* Timer display */
+.timer-display {
+  position: relative;
+  width: 100%;
+  background: #171717;
+  border-radius: 12px;
+  padding: 40px 20px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.timer-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: rgba(124, 106, 255, 0.1);
+  transition: width 1s linear;
+}
+
+.timer-time {
+  position: relative;
+  font-family: 'DM Mono', monospace;
+  font-size: 72px;
+  font-weight: 500;
+  color: #f0f0f0;
+  letter-spacing: 0.02em;
+}
+
+.timer-time.done {
+  color: #4ade80;
+}
+
+/* Presets */
+.timer-presets {
+  display: flex;
+  gap: 8px;
+}
+
+.preset-btn {
+  background: #171717;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-family: 'DM Mono', monospace;
+  font-size: 14px;
+  color: #888;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.preset-btn:hover:not(:disabled) {
+  border-color: #444;
+  color: #ccc;
+}
+
+.preset-btn.active {
+  border-color: #7c6aff;
+  color: #7c6aff;
+  background: rgba(124, 106, 255, 0.1);
+}
+
+.preset-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Controls */
+.timer-controls {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+.control-btn {
+  flex: 1;
+  padding: 16px;
+  border-radius: 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.control-btn.start {
+  background: #7c6aff;
+  border: none;
+  color: #fff;
+}
+
+.control-btn.start:hover {
+  opacity: 0.9;
+}
+
+.control-btn.pause {
+  background: #ff6b6b;
+  border: none;
+  color: #fff;
+}
+
+.control-btn.pause:hover {
+  opacity: 0.9;
+}
+
+.control-btn.reset {
+  background: transparent;
+  border: 1px solid #333;
+  color: #888;
+}
+
+.control-btn.reset:hover:not(:disabled) {
+  border-color: #555;
+  color: #aaa;
+}
+
+.control-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* Done message */
+.timer-done {
+  font-family: 'DM Mono', monospace;
+  font-size: 14px;
+  color: #4ade80;
+  margin: 0;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .timer-shell {
+    padding: 24px 16px;
+  }
+
+  .timer-card {
+    padding: 32px 24px;
+  }
+
+  .timer-title {
+    font-size: 28px;
+  }
+
+  .timer-time {
+    font-size: 56px;
+  }
+
+  .timer-display {
+    padding: 32px 16px;
+  }
+
+  .preset-btn {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+}
