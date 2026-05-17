@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test Supabase Connection</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <h1>Testing Supabase Connection...</h1>
+  <pre id="output"></pre>
+
+  <script>
+    const output = document.getElementById('output');
+
+    const supabaseUrl = 'https://zfkbuxuqdfgfxqamhpvt.supabase.co';
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inpma2J1eHVxZGZnZnhxYW1ocHZ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkwNDUxNTIsImV4cCI6MjA5NDYyMTE1Mn0.cnnBA01_LAGKOpBLqak9IrIKQMVtzZUk7UJLWk4Gq10';
+
+    const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+
+    async function test() {
+      output.textContent = 'Testing connection...\n';
+
+      // Test 1: Select from check_ins
+      output.textContent += '\n1. Testing SELECT from check_ins table:\n';
+      const { data: selectData, error: selectError } = await supabase
+        .from('check_ins')
+        .select('*');
+
+      if (selectError) {
+        output.textContent += `❌ SELECT Error: ${JSON.stringify(selectError, null, 2)}\n`;
+      } else {
+        output.textContent += `✅ SELECT Success! Found ${selectData.length} rows\n`;
+        output.textContent += JSON.stringify(selectData, null, 2) + '\n';
+      }
+
+      // Test 2: Try insert
+      output.textContent += '\n2. Testing INSERT:\n';
+      const testDate = new Date().toISOString().split('T')[0];
+      const { data: insertData, error: insertError } = await supabase
+        .from('check_ins')
+        .insert({
+          mood: 'thriving',
+          one_task: 'Test task',
+          committed: true,
+          date: testDate
+        })
+        .select();
+
+      if (insertError) {
+        output.textContent += `❌ INSERT Error: ${JSON.stringify(insertError, null, 2)}\n`;
+      } else {
+        output.textContent += `✅ INSERT Success!\n`;
+        output.textContent += JSON.stringify(insertData, null, 2) + '\n';
+      }
+    }
+
+    test();
+  </script>
+</body>
+</html>

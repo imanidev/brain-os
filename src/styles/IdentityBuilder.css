@@ -1,0 +1,296 @@
+.identity-shell {
+  min-height: 100vh;
+  background: #0a0a0a;
+  display: flex;
+  justify-content: center;
+  padding: 40px 24px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.identity-container {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.identity-loading {
+  color: #555;
+  font-family: 'DM Mono', monospace;
+  font-size: 14px;
+}
+
+/* Header */
+.identity-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.identity-title {
+  font-size: 32px;
+  font-weight: 600;
+  color: #f0f0f0;
+  margin: 0;
+}
+
+.identity-sub {
+  font-size: 15px;
+  color: #666;
+  margin: 0;
+}
+
+/* Card */
+.identity-card {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 16px;
+  padding: 32px;
+}
+
+/* Form */
+.identity-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-family: 'DM Mono', monospace;
+}
+
+.identity-input {
+  background: #171717;
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  color: #f0f0f0;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.identity-input:focus {
+  border-color: #7c6aff;
+}
+
+.identity-input::placeholder {
+  color: #444;
+}
+
+.identity-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.char-count {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: #444;
+  text-align: right;
+  margin: 0;
+}
+
+.error-msg {
+  font-size: 13px;
+  color: #ff6b6b;
+  font-family: 'DM Mono', monospace;
+  margin: 0;
+}
+
+.add-entry-btn {
+  background: #7c6aff;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 16px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.1s;
+}
+
+.add-entry-btn:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.add-entry-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* Identity Groups */
+.identity-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.identity-group {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.identity-group-header {
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.identity-group-header:hover {
+  background: #171717;
+}
+
+.identity-group-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  text-align: left;
+}
+
+.identity-statement {
+  font-size: 16px;
+  font-weight: 500;
+  color: #f0f0f0;
+}
+
+.identity-count {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  color: #666;
+}
+
+.expand-icon {
+  font-size: 20px;
+  color: #555;
+  font-weight: 300;
+}
+
+/* Evidence List */
+.evidence-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid #222;
+}
+
+.evidence-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 20px;
+  border-bottom: 1px solid #1a1a1a;
+  transition: background 0.15s;
+}
+
+.evidence-item:last-child {
+  border-bottom: none;
+}
+
+.evidence-item:hover {
+  background: #151515;
+}
+
+.evidence-item:hover .delete-entry-btn {
+  opacity: 1;
+}
+
+.evidence-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.evidence-text {
+  font-size: 14px;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+.evidence-date {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: #555;
+}
+
+.delete-entry-btn {
+  background: transparent;
+  border: none;
+  color: #555;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 4px 8px;
+  transition: color 0.15s, opacity 0.15s;
+  opacity: 0;
+}
+
+.delete-entry-btn:hover {
+  color: #ff6b6b;
+}
+
+/* Empty State */
+.identity-empty {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 16px;
+  padding: 48px 32px;
+  text-align: center;
+}
+
+.identity-empty p {
+  color: #666;
+  font-size: 15px;
+  margin: 0;
+}
+
+.identity-empty .empty-sub {
+  font-size: 13px;
+  color: #444;
+  margin-top: 8px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .identity-shell {
+    padding: 24px 16px;
+  }
+
+  .identity-card {
+    padding: 24px;
+  }
+
+  .identity-title {
+    font-size: 28px;
+  }
+
+  .delete-entry-btn {
+    opacity: 1;
+  }
+}
