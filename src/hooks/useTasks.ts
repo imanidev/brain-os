@@ -83,9 +83,10 @@ export function useTasks() {
 
     if (error) {
       console.error('Toggle task error:', error)
-      // Rollback
       await fetchTasks()
+      return
     }
+
   }
 
   async function deleteTask(id: string): Promise<void> {

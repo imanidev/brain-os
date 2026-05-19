@@ -49,10 +49,3 @@ export interface Thought {
   reframed_at?: string
   date: string // YYYY-MM-DD
 }
-
-export interface Distraction {
-  id?: string
-  created_at?: string
-  distraction: string
-  date: string // YYYY-MM-DD
-}

@@ -1,12 +1,11 @@
 import { NavLink } from 'react-router-dom'
 
 const ROUTES = [
-  { path: '/', label: 'Anchor' },
-  { path: '/confidence', label: 'Achievements' },
-  { path: '/identity', label: 'Identity' },
-  { path: '/thoughts', label: 'Thoughts' },
-  { path: '/distractions', label: 'Distractions' },
-  { path: '/timer', label: 'Timer' },
+  { path: '/', label: 'dashboard' },
+  { path: '/focus', label: 'focus' },
+  { path: '/confidence', label: 'achievements' },
+  { path: '/identity', label: 'identity' },
+  { path: '/thoughts', label: 'thoughts' },
 ]
 
 export default function Sidebar() {

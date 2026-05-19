@@ -1,0 +1,332 @@
+.dash-shell {
+  min-height: 100vh;
+  background: #0a0a0a;
+  display: flex;
+  justify-content: center;
+  padding: 48px 24px;
+  font-family: 'DM Sans', sans-serif;
+  position: relative;
+}
+
+.dash-container {
+  width: 100%;
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.dash-loading {
+  color: #666;
+  font-family: 'DM Mono', monospace;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 80px;
+}
+
+/* Thin top progress bar */
+.dash-progress-track {
+  position: fixed;
+  top: 0;
+  left: 200px;
+  right: 0;
+  height: 2px;
+  background: #1a1a1a;
+  z-index: 50;
+}
+
+.dash-progress-fill {
+  height: 100%;
+  background: #7c6aff;
+  opacity: 0.5;
+  transition: width 0.6s ease, opacity 0.4s ease;
+}
+
+.dash-progress-fill.complete {
+  opacity: 0.85;
+}
+
+/* Header */
+.dash-header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.dash-greeting {
+  font-size: 28px;
+  font-weight: 600;
+  color: #f0f0f0;
+  margin: 0;
+  transition: color 0.4s ease;
+}
+
+.dash-date {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+  font-family: 'DM Mono', monospace;
+}
+
+/* Focus card */
+.dash-focus {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 14px;
+  padding: 24px;
+  transition: border-color 0.6s ease, box-shadow 0.6s ease;
+}
+
+.dash-focus.all-done {
+  border-color: rgba(124, 106, 255, 0.25);
+  box-shadow: inset 3px 0 0 rgba(124, 106, 255, 0.35);
+}
+
+.focus-set,
+.focus-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.focus-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #7c6aff;
+  font-weight: 500;
+}
+
+.focus-task {
+  font-size: 22px;
+  color: #f0f0f0;
+  margin: 0;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.focus-cta-text {
+  font-size: 18px;
+  color: #aaa;
+  margin: 0;
+  transition: color 0.15s;
+}
+
+.focus-cta:hover .focus-cta-text {
+  color: #f0f0f0;
+}
+
+/* Tasks */
+.dash-tasks {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 14px;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.tasks-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tasks-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #888;
+  font-weight: 500;
+}
+
+.tasks-count {
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  color: #555;
+  transition: color 0.4s ease;
+}
+
+.tasks-count.all-done {
+  color: #7c6aff;
+}
+
+.tasks-empty {
+  font-size: 14px;
+  color: #666;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.tasks-empty:hover {
+  color: #aaa;
+}
+
+.dash-task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dash-task-item {
+  padding: 6px 0;
+}
+
+.dash-task-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.dash-task-row input[type='checkbox'] {
+  width: 16px;
+  height: 16px;
+  accent-color: #7c6aff;
+  cursor: pointer;
+}
+
+.dash-task-text {
+  font-size: 15px;
+  color: #ccc;
+  transition: opacity 0.4s ease, color 0.4s ease;
+}
+
+.dash-task-text.completed {
+  opacity: 0.3;
+  color: #ccc;
+}
+
+.tasks-more {
+  font-size: 13px;
+  color: #666;
+  text-decoration: none;
+  padding: 8px 0 0;
+  font-family: 'DM Mono', monospace;
+  transition: color 0.15s;
+}
+
+.tasks-more:hover {
+  color: #aaa;
+}
+
+/* Log-as-win nudge */
+.log-nudge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0 2px 28px;
+  animation: fadeInUp 0.2s ease forwards;
+}
+
+.log-nudge-text {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  color: #666;
+}
+
+.log-nudge-btn {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.log-nudge-btn.yes {
+  color: #7c6aff;
+}
+
+.log-nudge-btn.yes:hover {
+  background: rgba(124, 106, 255, 0.1);
+}
+
+.log-nudge-btn.skip {
+  color: #555;
+}
+
+.log-nudge-btn.skip:hover {
+  color: #888;
+}
+
+/* Quiet all-done note */
+.tasks-done-note {
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  color: #555;
+  margin: 0;
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tiles */
+.dash-tiles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.dash-tile {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 12px;
+  padding: 18px 16px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: border-color 0.15s, transform 0.15s;
+}
+
+.dash-tile:hover {
+  border-color: #333;
+  transform: translateY(-1px);
+}
+
+.tile-label {
+  font-size: 15px;
+  color: #f0f0f0;
+  font-weight: 500;
+}
+
+.tile-sub {
+  font-size: 12px;
+  color: #666;
+  font-family: 'DM Mono', monospace;
+}
+
+@media (max-width: 768px) {
+  .dash-shell {
+    padding: 24px 16px;
+  }
+
+  .dash-progress-track {
+    left: 0;
+  }
+
+  .dash-greeting {
+    font-size: 24px;
+  }
+
+  .focus-task {
+    font-size: 18px;
+  }
+}

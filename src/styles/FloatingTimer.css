@@ -1,0 +1,246 @@
+/* Floating button */
+.floating-timer-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #7c6aff;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(124, 106, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  transition: transform 0.15s, box-shadow 0.15s;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.floating-timer-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(124, 106, 255, 0.5);
+}
+
+.floating-timer-btn.running {
+  width: auto;
+  padding: 0 18px;
+  border-radius: 28px;
+  background: #111;
+  border: 1px solid #7c6aff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  animation: timerPulse 3s ease-in-out infinite;
+}
+
+@keyframes timerPulse {
+  0%, 100% { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 0 0 rgba(124, 106, 255, 0); }
+  50%       { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 0 6px rgba(124, 106, 255, 0.12); }
+}
+
+.floating-timer-icon {
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.floating-timer-time {
+  font-family: 'DM Mono', monospace;
+  font-size: 16px;
+  font-weight: 500;
+  color: #7c6aff;
+  letter-spacing: 0.02em;
+}
+
+/* Panel */
+.floating-timer-panel {
+  position: fixed;
+  bottom: 92px;
+  right: 24px;
+  width: 300px;
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.5);
+  z-index: 199;
+  font-family: 'DM Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.floating-timer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.floating-timer-label {
+  font-size: 13px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+}
+
+.floating-timer-close {
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: color 0.15s, background 0.15s;
+}
+
+.floating-timer-close:hover {
+  color: #ccc;
+  background: #1a1a1a;
+}
+
+.floating-timer-display {
+  position: relative;
+  width: 100%;
+  background: #171717;
+  border-radius: 10px;
+  padding: 24px 16px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.floating-timer-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: rgba(124, 106, 255, 0.12);
+  transition: width 1s linear;
+}
+
+.floating-timer-readout {
+  position: relative;
+  font-family: 'DM Mono', monospace;
+  font-size: 40px;
+  font-weight: 500;
+  color: #f0f0f0;
+  letter-spacing: 0.02em;
+}
+
+.floating-timer-readout.done {
+  color: #4ade80;
+}
+
+.floating-timer-presets {
+  display: flex;
+  gap: 6px;
+}
+
+.floating-preset-btn {
+  flex: 1;
+  background: #171717;
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  padding: 8px 0;
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  color: #888;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.floating-preset-btn:hover:not(:disabled) {
+  border-color: #444;
+  color: #ccc;
+}
+
+.floating-preset-btn.active {
+  border-color: #7c6aff;
+  color: #7c6aff;
+  background: rgba(124, 106, 255, 0.1);
+}
+
+.floating-preset-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.floating-timer-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.floating-control-btn {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.floating-control-btn.start {
+  background: #7c6aff;
+  border: none;
+  color: #fff;
+}
+
+.floating-control-btn.start:hover {
+  opacity: 0.9;
+}
+
+.floating-control-btn.pause {
+  background: #ff6b6b;
+  border: none;
+  color: #fff;
+}
+
+.floating-control-btn.pause:hover {
+  opacity: 0.9;
+}
+
+.floating-control-btn.reset {
+  background: transparent;
+  border: 1px solid #333;
+  color: #888;
+}
+
+.floating-control-btn.reset:hover:not(:disabled) {
+  border-color: #555;
+  color: #aaa;
+}
+
+.floating-control-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.floating-timer-done {
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  color: #4ade80;
+  margin: 0;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .floating-timer-panel {
+    width: calc(100vw - 32px);
+    right: 16px;
+    bottom: 84px;
+  }
+
+  .floating-timer-btn {
+    bottom: 16px;
+    right: 16px;
+  }
+}

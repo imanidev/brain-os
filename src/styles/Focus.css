@@ -2,7 +2,7 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-.anchor-shell {
+.focus-shell {
   min-height: 100vh;
   background: #0a0a0a;
   display: flex;
@@ -12,7 +12,7 @@
   font-family: 'DM Sans', sans-serif;
 }
 
-.anchor-container {
+.focus-container {
   width: 100%;
   max-width: 800px;
   display: flex;
@@ -20,13 +20,13 @@
   gap: 24px;
 }
 
-.anchor-loading {
+.focus-loading {
   color: #555;
   font-family: 'DM Mono', monospace;
   font-size: 14px;
 }
 
-.anchor-card {
+.focus-card {
   width: 100%;
   max-width: 520px;
   background: #111;
@@ -53,20 +53,20 @@
 }
 
 /* Header */
-.anchor-header {
+.focus-header {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.anchor-greeting {
+.focus-greeting {
   font-size: 36px;
   font-weight: 600;
   color: #f0f0f0;
   line-height: 1.2;
 }
 
-.anchor-sub {
+.focus-sub {
   font-size: 16px;
   color: #666;
 }
@@ -189,7 +189,7 @@
 }
 
 /* Committed state */
-.anchor-card.committed {
+.focus-card.committed {
   align-items: center;
   text-align: center;
   gap: 20px;
@@ -230,7 +230,7 @@
   margin-top: 12px;
 }
 
-.complete-anchor-btn {
+.complete-focus-btn {
   background: #7c6aff;
   color: #fff;
   border: none;
@@ -246,12 +246,12 @@
   width: 100%;
 }
 
-.complete-anchor-btn:hover {
+.complete-focus-btn:hover {
   opacity: 0.9;
   transform: translateY(-1px);
 }
 
-.anchor-note {
+.focus-note {
   font-family: 'DM Mono', monospace;
   font-size: 13px;
   color: #666;
@@ -449,7 +449,7 @@
 }
 
 @media (max-width: 768px) {
-  .anchor-shell {
+  .focus-shell {
     padding: 24px 16px;
   }
 
